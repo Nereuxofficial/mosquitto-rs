@@ -896,10 +896,11 @@ extern "C" {
 pub struct mosquitto__packet {
     _unused: [u8; 0],
 }
+pub type mosquitto_v5_packet = mosquitto__packet;
 extern "C" {
     pub fn property__read_all(
         command: ::std::os::raw::c_int,
-        packet: *mut mosquitto__packet,
+        packet: *mut mosquitto_v5_packet,
         properties: *mut *mut mosquitto_property,
     ) -> ::std::os::raw::c_int;
 }
