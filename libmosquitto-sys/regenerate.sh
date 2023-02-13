@@ -9,5 +9,5 @@ bindgen binding.h -o src/lib.rs \
   --raw-line "#![allow(clippy::unreadable_literal)]" \
   --default-enum-style rust \
   --generate=functions,types,vars \
-  --allowlist-function="(mqtt|mosq|property).*" \
-  --allowlist-type="(mqtt|mosq|property).*" \
+  --allowlist-function="(mqtt|mosq|property|totally).*" \
+  --allowlist-type="(mqtt|mosq|property|totally).*" \
