@@ -903,6 +903,20 @@ extern "C" {
         properties: *mut *mut mosquitto_property,
     ) -> ::std::os::raw::c_int;
 }
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct totallynotmosquitto_packet {
+    pub remaining_count: i8,
+    pub payload: *mut u8,
+    pub next: *mut totallynotmosquitto_packet,
+    pub remaining_mult: u32,
+    pub remaining_length: u32,
+    pub packet_length: u32,
+    pub to_process: u32,
+    pub pos: u32,
+    pub mid: u16,
+    pub command: u8,
+}
 extern "C" {
     pub fn mosquitto_property_copy_all(
         dest: *mut *mut mosquitto_property,
